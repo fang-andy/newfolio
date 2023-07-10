@@ -1,11 +1,13 @@
 import React from "react";
 import Home from "@/components/Home";
+import About from "@/components/About";
 
 const App = () => {
   return (
     <div>
       <h1 className="text-2xl font-bold">
         <Home />
+        <About />
       </h1>
     </div>
   );
