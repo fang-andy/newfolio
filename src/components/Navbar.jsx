@@ -5,49 +5,69 @@ import React, { useState } from "react";
 import { FaBars, FaTimes, FaGithub, FaLinkedin } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { BsFillPersonLinesFill } from "react-icons/bs";
-import { Link } from "react-scroll";
+// import { Link } from "react-scroll";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
-const Navbar = () => {
+const Navbar = ({ selectedPage, setSelectedPage }) => {
   const [nav, setNav] = useState(false);
   const handleClick = () => setNav(!nav);
 
+  const Link = ({ page, selectedPage, setSelectedPage }) => {
+    const lowerCasePage = page.toLowerCase();
+
+    return (
+      <AnchorLink
+        className={`${selectedPage === lowerCasePage ? "text-[#fca26e]" : ""} 
+        ${nav ? "py-6 text-4xl" : ""}
+         hover:text-[#fca26e] transition duration-500`}
+        href={`#${lowerCasePage}`}
+        onClick={() => {
+          setSelectedPage(lowerCasePage);
+          !nav ? null : handleClick();
+        }}
+      >
+        {page}
+      </AnchorLink>
+    );
+  };
+
   return (
     <div
-      className="fixed w-full h-[80px] flex justify-between
-        items-center px-4 bg-[#0a192f] text-gray-300"
+      className="fixed w-5/6 h-[80px] flex justify-between
+        items-center px-4 bg-[#0a192f] text-gray-300 pt-2"
     >
-      <div>
+      <div className="pl-5">
         <Image src="/logo.png" width={50} height={50} alt="logo" />
       </div>
 
       {/* Menu */}
-      <ul className="hidden md:flex">
-        <li>
-          <Link to="home" smooth={true} duration={500}>
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link to="about" smooth={true} duration={500}>
-            About
-          </Link>
-        </li>
-        <li>
-          <Link to="skills" smooth={true} duration={500}>
-            Skills
-          </Link>
-        </li>
-        <li>
-          <Link to="work" smooth={true} duration={500}>
-            Work
-          </Link>
-        </li>
-        <li>
-          <Link to="contact" smooth={true} duration={500}>
-            Contact
-          </Link>
-        </li>
-      </ul>
+      <div className="hidden md:flex justify-between gap-16 text-[20px] font-light">
+        <Link
+          page="Home"
+          selectedPage={selectedPage}
+          setSelectedPage={setSelectedPage}
+        />
+        <Link
+          page="About"
+          selectedPage={selectedPage}
+          setSelectedPage={setSelectedPage}
+        />
+        <Link
+          page="Skills"
+          selectedPage={selectedPage}
+          setSelectedPage={setSelectedPage}
+        />
+        <Link
+          page="Work"
+          selectedPage={selectedPage}
+          setSelectedPage={setSelectedPage}
+        />
+        <Link
+          page="Contact"
+          selectedPage={selectedPage}
+          setSelectedPage={setSelectedPage}
+        />
+      </div>
 
       {/* Hamburger */}
       <div
@@ -58,57 +78,39 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      <ul
+      <div
         className={
           !nav
             ? "hidden"
-            : "absolute top-0 left-0 w-full h-screen bg-[#0a192f] flex flex-col justify-center items-center"
+            : "absolute top-0 left-0 w-screen h-screen bg-[#0a192f] flex flex-col justify-center items-center font-light"
         }
       >
-        <li className="py-6 text-4xl">
-          <Link onClick={handleClick} to="home" smooth={true} duration={500}>
-            Home
-          </Link>
-        </li>
-        <li className="py-6 text-4xl">
-          <li>
-            <Link onClick={handleClick} to="about" smooth={true} duration={500}>
-              About
-            </Link>
-          </li>
-        </li>
-        <li className="py-6 text-4xl">
-          <li>
-            <Link
-              onClick={handleClick}
-              to="skills"
-              smooth={true}
-              duration={500}
-            >
-              Skills
-            </Link>
-          </li>
-        </li>
-        <li className="py-6 text-4xl">
-          <li>
-            <Link onClick={handleClick} to="work" smooth={true} duration={500}>
-              Work
-            </Link>
-          </li>
-        </li>
-        <li className="py-6 text-4xl">
-          <li>
-            <Link
-              onClick={handleClick}
-              to="contact"
-              smooth={true}
-              duration={500}
-            >
-              Contact
-            </Link>
-          </li>
-        </li>
-      </ul>
+        <Link
+          page="Home"
+          selectedPage={selectedPage}
+          setSelectedPage={setSelectedPage}
+        />
+        <Link
+          page="About"
+          selectedPage={selectedPage}
+          setSelectedPage={setSelectedPage}
+        />
+        <Link
+          page="Skills"
+          selectedPage={selectedPage}
+          setSelectedPage={setSelectedPage}
+        />
+        <Link
+          page="Work"
+          selectedPage={selectedPage}
+          setSelectedPage={setSelectedPage}
+        />
+        <Link
+          page="Contact"
+          selectedPage={selectedPage}
+          setSelectedPage={setSelectedPage}
+        />
+      </div>
 
       {/* Social Icons */}
       <div className="hidden lg:flex fixed flex-col top-[35%] left-0">

@@ -1,15 +1,15 @@
-import React from "react";
-import Landing from "@/components/Landing";
-import About from "@/components/About";
-import Skills from "@/components/Skills";
-import Work from "@/components/Work";
-import Contact from "@/components/Contact";
+"use client";
+
+import { useState } from "react";
+import { Navbar, Landing, About, Skills, Work, Contact } from "@/components";
 
 const App = () => {
+  const [selectedPage, setSelectedPage] = useState("home");
   return (
     <div>
       <h1 className="text-2xl font-bold">
-        <Landing />
+        <Navbar selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+        <Landing setSelectedPage={setSelectedPage} />
         <About />
         <Skills />
         <Work />
@@ -20,7 +20,6 @@ const App = () => {
 };
 
 export default App;
-
 
 /*
 dark blue       #1a3947
