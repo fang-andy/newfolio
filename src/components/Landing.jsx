@@ -1,7 +1,12 @@
-import React from "react";
-import { HiArrowNarrowRight } from "react-icons/hi";
+"use client";
 
-const Home = () => {
+import { useState } from "react";
+import { HiArrowNarrowRight } from "react-icons/hi";
+import AnchorLink from "react-anchor-link-smooth-scroll";
+
+const Landing = () => {
+  const [selectedPage, setSelectedPage] = useState("");
+
   return (
     <div name="home" className="w-full h-screen bg-[#0a192f]">
       {/* Container */}
@@ -18,19 +23,21 @@ const Home = () => {
           applications.
         </p>
         <div>
-          <button
+          <AnchorLink
             className="text-white group border-2 px-6 py-3 my-2 flex items-center 
-            hover:bg-[#fca26e] hover:border-[#fca26e]"
+            hover:bg-[#fca26e] hover:border-[#fca26e] w-[215px]"
+            onClick={() => setSelectedPage("work")}
+            href="#work"
           >
             View Work
             <span className="group-hover:rotate-90 duration-300">
               <HiArrowNarrowRight className="ml-3" />
             </span>
-          </button>
+          </AnchorLink>
         </div>
       </div>
     </div>
   );
 };
 
-export default Home;
+export default Landing;
