@@ -33,15 +33,15 @@ const Navbar = ({ selectedPage, setSelectedPage }) => {
 
   return (
     <div
-      className="fixed w-5/6 h-[80px] flex justify-between
-        items-center px-4 bg-[#0a192f] text-gray-300 pt-2"
+      className="fixed w-full h-[80px] flex justify-between
+        items-center px-20 py-4 bg-[#0a192f] text-gray-300 pt-8"
     >
-      <div className="pl-5">
+      <div>
         <Image src="/logo.png" width={50} height={50} alt="logo" />
       </div>
 
       {/* Menu */}
-      <div className="hidden md:flex justify-between gap-16 text-[20px] font-light">
+      <div className="hidden md:flex justify-between gap-16 text-[18px] font-light">
         <Link
           page="Home"
           selectedPage={selectedPage}
@@ -52,11 +52,11 @@ const Navbar = ({ selectedPage, setSelectedPage }) => {
           selectedPage={selectedPage}
           setSelectedPage={setSelectedPage}
         />
-        <Link
+        {/* <Link
           page="Skills"
           selectedPage={selectedPage}
           setSelectedPage={setSelectedPage}
-        />
+        /> */}
         <Link
           page="Work"
           selectedPage={selectedPage}
@@ -72,7 +72,7 @@ const Navbar = ({ selectedPage, setSelectedPage }) => {
       {/* Hamburger */}
       <div
         onClick={handleClick}
-        className="md:hidden z-10 hover:cursor-pointer"
+        className="md:hidden z-10 hover:cursor-pointer pr-0"
       >
         {!nav ? <FaBars /> : <FaTimes />}
       </div>
@@ -95,11 +95,11 @@ const Navbar = ({ selectedPage, setSelectedPage }) => {
           selectedPage={selectedPage}
           setSelectedPage={setSelectedPage}
         />
-        <Link
+        {/* <Link
           page="Skills"
           selectedPage={selectedPage}
           setSelectedPage={setSelectedPage}
-        />
+        /> */}
         <Link
           page="Work"
           selectedPage={selectedPage}

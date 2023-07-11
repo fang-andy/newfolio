@@ -27,7 +27,7 @@ const Work = () => {
               flex justify-center items-center mx-auto content-div"
           >
             {/* Hover Effects */}
-            <div classNmae="opacity-0 group-hover:opacity-100">
+            <div className="opacity-0 group-hover:opacity-100">
               <span className="text-2xl font-bold text-white tracking-wider">
                 React JS Application
               </span>
@@ -57,7 +57,7 @@ const Work = () => {
               flex justify-center items-center mx-auto content-div"
           >
             {/* Hover Effects */}
-            <div classNmae="opacity-0 group-hover:opacity-100">
+            <div className="opacity-0 group-hover:opacity-100">
               <span className="text-2xl font-bold text-white tracking-wider">
                 React JS Application
               </span>
@@ -87,7 +87,7 @@ const Work = () => {
               flex justify-center items-center mx-auto content-div"
           >
             {/* Hover Effects */}
-            <div classNmae="opacity-0 group-hover:opacity-100">
+            <div className="opacity-0 group-hover:opacity-100">
               <span className="text-2xl font-bold text-white tracking-wider">
                 React JS Application
               </span>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Navbar, Landing, About, Skills, Work, Contact } from "@/components";
+import { Navbar, DotGroup, Landing, About, Skills, Work, Contact } from "@/components";
 
 const App = () => {
   const [selectedPage, setSelectedPage] = useState("home");
@@ -9,9 +9,13 @@ const App = () => {
     <div>
       <h1 className="text-2xl font-bold">
         <Navbar selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+        <DotGroup
+          selectedPage={selectedPage}
+          setSelectedPage={setSelectedPage}
+        />
         <Landing setSelectedPage={setSelectedPage} />
         <About />
-        <Skills />
+        {/* <Skills /> */}
         <Work />
         <Contact />
       </h1>
