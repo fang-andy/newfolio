@@ -5,7 +5,7 @@ const Work = () => {
   return (
     <div
       id="work"
-      className="w-full mid:h-screen bg-[#0a192f] text-gray-300"
+      className="w-full mid:h-screen bg-[#0a192f] text-gray-300 pt-20"
     >
       {/* Container */}
       <div className="max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full">
@@ -23,7 +23,7 @@ const Work = () => {
           {/* Grid Item */}
           <div
             style={{ backgroundImage: `url(${BetterBeans})` }}
-            className="shadow-lg shadow-[#040c16] group container rounded-md 
+            className="shadow-lg shadow-[#040c16] group container rounded-md
               flex justify-center items-center mx-auto content-div"
           >
             {/* Hover Effects */}
@@ -34,7 +34,7 @@ const Work = () => {
               <div className="pt-8 text-center">
                 <a href="/">
                   <button
-                    className="text0center rounded-lg px-4 py-3 m-3 bg-white 
+                    className="text0center rounded-lg px-4 py-3 m-3 bg-white
                     text-gray-700 font-bold text-lg"
                   >
                     Demo
@@ -42,7 +42,7 @@ const Work = () => {
                 </a>
                 <a href="/">
                   <button
-                    className="text0center rounded-lg px-4 py-3 m-3 bg-white 
+                    className="text0center rounded-lg px-4 py-3 m-3 bg-white
                     text-gray-700 font-bold text-lg"
                   >
                     Code
@@ -53,7 +53,7 @@ const Work = () => {
           </div>
           {/* Grid Item */}
           <div
-            className="shadow-lg shadow-[#040c16] group container rounded-md 
+            className="shadow-lg shadow-[#040c16] group container rounded-md
               flex justify-center items-center mx-auto content-div"
           >
             {/* Hover Effects */}
@@ -64,7 +64,7 @@ const Work = () => {
               <div className="pt-8 text-center">
                 <a href="/">
                   <button
-                    className="text0center rounded-lg px-4 py-3 m-3 bg-white 
+                    className="text0center rounded-lg px-4 py-3 m-3 bg-white
                     text-gray-700 font-bold text-lg"
                   >
                     Demo
@@ -72,7 +72,7 @@ const Work = () => {
                 </a>
                 <a href="/">
                   <button
-                    className="text0center rounded-lg px-4 py-3 m-3 bg-white 
+                    className="text0center rounded-lg px-4 py-3 m-3 bg-white
                     text-gray-700 font-bold text-lg"
                   >
                     Code
@@ -83,7 +83,7 @@ const Work = () => {
           </div>
           {/* Grid Item */}
           <div
-            className="shadow-lg shadow-[#040c16] group container rounded-md 
+            className="shadow-lg shadow-[#040c16] group container rounded-md
               flex justify-center items-center mx-auto content-div"
           >
             {/* Hover Effects */}
@@ -94,7 +94,7 @@ const Work = () => {
               <div className="pt-8 text-center">
                 <a href="/">
                   <button
-                    className="text0center rounded-lg px-4 py-3 m-3 bg-white 
+                    className="text0center rounded-lg px-4 py-3 m-3 bg-white
                     text-gray-700 font-bold text-lg"
                   >
                     Demo
@@ -102,7 +102,7 @@ const Work = () => {
                 </a>
                 <a href="/">
                   <button
-                    className="text0center rounded-lg px-4 py-3 m-3 bg-white 
+                    className="text0center rounded-lg px-4 py-3 m-3 bg-white
                     text-gray-700 font-bold text-lg"
                   >
                     Code

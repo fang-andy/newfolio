@@ -17,7 +17,7 @@ const Navbar = ({ selectedPage, setSelectedPage }) => {
 
     return (
       <AnchorLink
-        className={`${selectedPage === lowerCasePage ? "text-[#fca26e]" : ""} 
+        className={`${selectedPage === lowerCasePage ? "text-[#fca26e]" : ""}
         ${nav ? "py-6 text-4xl" : ""}
          hover:text-[#fca26e] transition duration-500`}
         href={`#${lowerCasePage}`}
@@ -116,7 +116,7 @@ const Navbar = ({ selectedPage, setSelectedPage }) => {
       <div className="hidden lg:flex fixed flex-col top-[35%] left-0">
         <ul>
           <li
-            className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] 
+            className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px]
             hover:ml-[-10px] duration-300 bg-blue-600"
           >
             <a
@@ -127,7 +127,7 @@ const Navbar = ({ selectedPage, setSelectedPage }) => {
             </a>
           </li>
           <li
-            className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] 
+            className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px]
             hover:ml-[-10px] duration-300 bg-[#333333]"
           >
             <a
@@ -138,7 +138,7 @@ const Navbar = ({ selectedPage, setSelectedPage }) => {
             </a>
           </li>
           <li
-            className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] 
+            className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px]
             hover:ml-[-10px] duration-300 bg-[#6fc2b0]"
           >
             <a
@@ -149,7 +149,7 @@ const Navbar = ({ selectedPage, setSelectedPage }) => {
             </a>
           </li>
           <li
-            className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] 
+            className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px]
             hover:ml-[-10px] duration-300 bg-[#565f69]"
           >
             <a
