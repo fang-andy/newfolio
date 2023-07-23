@@ -34,18 +34,18 @@ const Navbar = ({ activeLink, setActiveLink }) => {
   return (
     <div
       className="fixed w-full h-[80px] flex justify-between
-        items-center px-20 py-4 bg-[#0a192f] text-gray-300 pt-8"
+        items-center px-[3rem] py-4 text-gray-300 pt-10"
     >
       <div>
         <Image src="/logo.png" width={50} height={50} alt="logo" />
       </div>
 
       {/* Menu */}
-      <div className="hidden md:flex justify-between gap-16 text-[18px] font-light">
-        <Link page="Home" />
-        <Link page="About" />
-        <Link page="Work" />
-        <Link page="Contact" />
+      <div className="hidden md:flex flex-col pt-14 text-[14px] font-light text-right">
+        <Link page="home" />
+        <Link page="about" />
+        <Link page="work" />
+        <Link page="contact" />
       </div>
 
       {/* Hamburger */}
@@ -71,7 +71,7 @@ const Navbar = ({ activeLink, setActiveLink }) => {
       </div>
 
       {/* Social Icons */}
-      <div className="hidden lg:flex fixed flex-col top-[35%] left-0">
+      {/* <div className="hidden lg:flex fixed flex-col top-[35%] left-0">
         <ul>
           <li
             className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px]
@@ -118,7 +118,7 @@ const Navbar = ({ activeLink, setActiveLink }) => {
             </a>
           </li>
         </ul>
-      </div>
+      </div> */}
     </div>
   );
 };

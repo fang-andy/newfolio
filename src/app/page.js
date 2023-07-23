@@ -6,7 +6,6 @@ import {
   DotGroup,
   Landing,
   About,
-  Skills,
   Work,
   Contact,
 } from "@/components";
@@ -78,4 +77,7 @@ gray            #797983
 peach           #efbd9d
 light orange    #fca26e
 bright orange   #f5751d
+
+#b7ab98
+hsla(37,18%,66%,.5)
 */
