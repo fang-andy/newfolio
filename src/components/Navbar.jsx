@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaBars, FaTimes, FaGithub, FaLinkedin } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { BsFillPersonLinesFill } from "react-icons/bs";
@@ -10,16 +10,52 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const Navbar = ({ selectedPage, setSelectedPage }) => {
   const [nav, setNav] = useState(false);
+  const [activeLink, setActiveLink] = useState("home");
+
   const handleClick = () => setNav(!nav);
 
-  const Link = ({ page, selectedPage, setSelectedPage }) => {
+  const handleScroll = () => {
+    const homeSection = document.getElementById("home");
+    const aboutSection = document.getElementById("about");
+    const workSection = document.getElementById("work");
+    const contactSection = document.getElementById("contact");
+
+    const scrollPosition = window.scrollY;
+
+    if (
+      scrollPosition >= homeSection.offsetTop &&
+      scrollPosition < aboutSection.offsetTop
+    ) {
+      setActiveLink("home");
+    } else if (
+      scrollPosition >= aboutSection.offsetTop &&
+      scrollPosition < workSection.offsetTop
+    ) {
+      setActiveLink("about");
+    } else if (
+      scrollPosition >= workSection.offsetTop &&
+      scrollPosition < contactSection.offsetTop
+    ) {
+      setActiveLink("work");
+    } else {
+      setActiveLink("contact");
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const Link = ({ page }) => {
     const lowerCasePage = page.toLowerCase();
 
     return (
       <AnchorLink
-        className={`${selectedPage === lowerCasePage ? "text-[#fca26e]" : ""}
+        className={`${activeLink === lowerCasePage ? "text-[#fca26e]" : ""}
         ${nav ? "py-6 text-4xl" : ""}
-         hover:text-[#fca26e] transition duration-500`}
+         hover:text-[#fca26e] transition duration-500 nav-link`}
         href={`#${lowerCasePage}`}
         onClick={() => {
           setSelectedPage(lowerCasePage);
@@ -123,7 +159,7 @@ const Navbar = ({ selectedPage, setSelectedPage }) => {
               className="flex justify-between items-center w-full text-gray-300"
               href="/"
             >
-              LinkedIn <FaLinkedin size={30} />
+              <span className="pr-3">LinkedIn</span> <FaLinkedin size={30} />
             </a>
           </li>
           <li

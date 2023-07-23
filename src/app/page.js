@@ -38,6 +38,7 @@ const App = () => {
         )}
         <Landing setSelectedPage={setSelectedPage} />
         <About />
+
         {/* <Skills /> */}
         <Work />
         <Contact />
