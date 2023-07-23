@@ -1,52 +1,16 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { FaBars, FaTimes, FaGithub, FaLinkedin } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { BsFillPersonLinesFill } from "react-icons/bs";
-// import { Link } from "react-scroll";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
-const Navbar = ({ selectedPage, setSelectedPage }) => {
+const Navbar = ({ activeLink, setActiveLink }) => {
   const [nav, setNav] = useState(false);
-  const [activeLink, setActiveLink] = useState("home");
 
   const handleClick = () => setNav(!nav);
-
-  const handleScroll = () => {
-    const homeSection = document.getElementById("home");
-    const aboutSection = document.getElementById("about");
-    const workSection = document.getElementById("work");
-    const contactSection = document.getElementById("contact");
-
-    const scrollPosition = window.scrollY;
-
-    if (
-      scrollPosition >= homeSection.offsetTop &&
-      scrollPosition < aboutSection.offsetTop
-    ) {
-      setActiveLink("home");
-    } else if (
-      scrollPosition >= aboutSection.offsetTop &&
-      scrollPosition < workSection.offsetTop
-    ) {
-      setActiveLink("about");
-    } else if (
-      scrollPosition >= workSection.offsetTop &&
-      scrollPosition < contactSection.offsetTop
-    ) {
-      setActiveLink("work");
-    } else {
-      setActiveLink("contact");
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const Link = ({ page }) => {
     const lowerCasePage = page.toLowerCase();
@@ -58,7 +22,7 @@ const Navbar = ({ selectedPage, setSelectedPage }) => {
          hover:text-[#fca26e] transition duration-500 nav-link`}
         href={`#${lowerCasePage}`}
         onClick={() => {
-          setSelectedPage(lowerCasePage);
+          setActiveLink(lowerCasePage);
           !nav ? null : handleClick();
         }}
       >
@@ -78,31 +42,10 @@ const Navbar = ({ selectedPage, setSelectedPage }) => {
 
       {/* Menu */}
       <div className="hidden md:flex justify-between gap-16 text-[18px] font-light">
-        <Link
-          page="Home"
-          selectedPage={selectedPage}
-          setSelectedPage={setSelectedPage}
-        />
-        <Link
-          page="About"
-          selectedPage={selectedPage}
-          setSelectedPage={setSelectedPage}
-        />
-        {/* <Link
-          page="Skills"
-          selectedPage={selectedPage}
-          setSelectedPage={setSelectedPage}
-        /> */}
-        <Link
-          page="Work"
-          selectedPage={selectedPage}
-          setSelectedPage={setSelectedPage}
-        />
-        <Link
-          page="Contact"
-          selectedPage={selectedPage}
-          setSelectedPage={setSelectedPage}
-        />
+        <Link page="Home" />
+        <Link page="About" />
+        <Link page="Work" />
+        <Link page="Contact" />
       </div>
 
       {/* Hamburger */}
@@ -121,31 +64,10 @@ const Navbar = ({ selectedPage, setSelectedPage }) => {
             : "absolute top-0 left-0 w-screen h-screen bg-[#0a192f] flex flex-col justify-center items-center font-light"
         }
       >
-        <Link
-          page="Home"
-          selectedPage={selectedPage}
-          setSelectedPage={setSelectedPage}
-        />
-        <Link
-          page="About"
-          selectedPage={selectedPage}
-          setSelectedPage={setSelectedPage}
-        />
-        {/* <Link
-          page="Skills"
-          selectedPage={selectedPage}
-          setSelectedPage={setSelectedPage}
-        /> */}
-        <Link
-          page="Work"
-          selectedPage={selectedPage}
-          setSelectedPage={setSelectedPage}
-        />
-        <Link
-          page="Contact"
-          selectedPage={selectedPage}
-          setSelectedPage={setSelectedPage}
-        />
+        <Link page="Home" />
+        <Link page="About" />
+        <Link page="Work" />
+        <Link page="Contact" />
       </div>
 
       {/* Social Icons */}

@@ -14,27 +14,49 @@ import useMediaQuery from "../hooks/useMediaQuery";
 
 const App = () => {
   const [selectedPage, setSelectedPage] = useState("home");
-  const [isTopOfPage, setIsTopOfPage] = useState(true);
+  const [activeLink, setActiveLink] = useState("home");
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY === 0) setIsTopOfPage(true);
-      if (window.scrollY !== 0) setIsTopOfPage(false);
+      const homeSection = document.getElementById("home");
+      const aboutSection = document.getElementById("about");
+      const workSection = document.getElementById("work");
+      const contactSection = document.getElementById("contact");
+
+      const scrollPosition = window.scrollY;
+
+      if (
+        scrollPosition >= homeSection.offsetTop &&
+        scrollPosition < aboutSection.offsetTop
+      ) {
+        setActiveLink("home");
+      } else if (
+        scrollPosition >= aboutSection.offsetTop &&
+        scrollPosition < workSection.offsetTop
+      ) {
+        setActiveLink("about");
+      } else if (
+        scrollPosition >= workSection.offsetTop &&
+        scrollPosition < contactSection.offsetTop
+      ) {
+        setActiveLink("work");
+      } else {
+        setActiveLink("contact");
+      }
     };
+
     window.addEventListener("scroll", handleScroll);
+
     return () => window.removeEventListener("scroll", handleScroll);
-  });
+  }, []);
 
   return (
     <div>
-      <h1 className="text-2xl font-bold">
-        <Navbar selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+      <h1 className="text-2xl">
+        <Navbar activeLink={activeLink} setActiveLink={setActiveLink} />
         {isAboveMediumScreens && (
-          <DotGroup
-            selectedPage={selectedPage}
-            setSelectedPage={setSelectedPage}
-          />
+          <DotGroup setSelectedPage={setSelectedPage} activeLink={activeLink} />
         )}
         <Landing setSelectedPage={setSelectedPage} />
         <About />
