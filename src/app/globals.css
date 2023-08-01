@@ -7,9 +7,11 @@
 @layer base {
   body {
     @apply font-[Raleway];
+    overflow: auto;
+    height: 100%;
+    overscroll-behavior: none;
   }
   li {
-    @apply px-4;
     @apply cursor-pointer;
   }
 }

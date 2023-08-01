@@ -5,10 +5,10 @@ const Work = () => {
   return (
     <div
       id="work"
-      className="w-full mid:h-screen bg-[#0a192f] text-gray-300 pt-20"
+      className="w-full h-screen mid:h-screen bg-[#0a192f] text-gray-300 pt-20"
     >
       {/* Container */}
-      <div className="max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full">
+      <div className="max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-4/5 h-full">
         <div className="pb-8">
           <p className="text-4xl font-bold inline border-b-4 text-gray-300 border-[#fca26e]">
             Work
@@ -28,7 +28,7 @@ const Work = () => {
           >
             {/* Hover Effects */}
             <div className="opacity-0 group-hover:opacity-100">
-              <span className="text-2xl font-bold text-white tracking-wider">
+              <span className="text-2xl font-bold text-white">
                 React JS Application
               </span>
               <div className="pt-8 text-center">

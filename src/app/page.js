@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import {
   Navbar,
   DotGroup,
+  Social,
   Landing,
   About,
   Work,
@@ -54,9 +55,10 @@ const App = () => {
     <div>
       <h1 className="text-2xl">
         <Navbar activeLink={activeLink} setActiveLink={setActiveLink} />
-        {isAboveMediumScreens && (
+        {/* {isAboveMediumScreens && (
           <DotGroup setSelectedPage={setSelectedPage} activeLink={activeLink} />
-        )}
+        )} */}
+        {isAboveMediumScreens && <Social />}
         <Landing setSelectedPage={setSelectedPage} />
         <About />
 
@@ -77,6 +79,7 @@ gray            #797983
 peach           #efbd9d
 light orange    #fca26e
 bright orange   #f5751d
+background      #0a192f
 
 #b7ab98
 hsla(37,18%,66%,.5)

@@ -7,7 +7,7 @@ const DotGroup = ({ setSelectedPage, activeLink }) => {
     before:left-[-50%] before:top-[-50%]`;
 
   return (
-    <div className="flex flex-col gap-6 fixed top-[60%] right-[3rem]">
+    <div className="flex flex-col gap-6 fixed top-[50%] right-[3rem]">
       <AnchorLink
         className={`${
           activeLink === "home" ? selectedStyles : "bg-[#8892b0]"
