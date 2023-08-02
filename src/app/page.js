@@ -47,25 +47,38 @@ const App = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll-snap", handleScroll);
 
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll-snap", handleScroll);
+
+    }
   }, []);
 
   return (
-    <div>
+    <div className="snap-y snap-mandatory overflow-scroll h-screen">
       <h1 className="text-2xl">
         <Navbar activeLink={activeLink} setActiveLink={setActiveLink} />
         {/* {isAboveMediumScreens && (
           <DotGroup setSelectedPage={setSelectedPage} activeLink={activeLink} />
         )} */}
         {isAboveMediumScreens && <Social />}
-        <Landing setSelectedPage={setSelectedPage} />
-        <About />
-
-        {/* <Skills /> */}
-        <Work />
-        <Contact />
+        <div className="snap-start">
+          <Landing setSelectedPage={setSelectedPage} />
+        </div>
       </h1>
+        <div className="snap-start">
+          <About />
+        </div>
+        {/* <Skills /> */}
+        <div className="snap-start">
+          <Work />
+        </div>
+        <div className="snap-start">
+          <Contact />
+        </div>
     </div>
   );
 };

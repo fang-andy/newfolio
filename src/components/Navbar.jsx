@@ -15,9 +15,9 @@ const Navbar = ({ activeLink, setActiveLink }) => {
 
     return (
       <AnchorLink
-        className={`${activeLink === lowerCasePage ? "text-[#fca26e]" : ""}
+        className={`${activeLink === lowerCasePage ? "text-[#013220]" : ""}
         ${nav ? "py-6 text-4xl" : ""}
-         hover:text-[#fca26e] transition duration-500 nav-link`}
+         hover:text-greenleaf transition duration-500 nav-link`}
         href={`#${lowerCasePage}`}
         onClick={() => {
           setActiveLink(lowerCasePage);
@@ -32,7 +32,7 @@ const Navbar = ({ activeLink, setActiveLink }) => {
   return (
     <div
       className="fixed w-full h-[80px] flex justify-between
-        items-center px-[3rem] py-4 text-gray-300 pt-10"
+        items-center px-[3rem] py-4 text-grey pt-10 z-10"
     >
       <div>
         <Image src="/logo.png" width={50} height={50} alt="logo" />

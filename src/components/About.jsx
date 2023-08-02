@@ -2,7 +2,11 @@ import React from "react";
 
 const About = () => {
   return (
-    <div id="about" className="w-full h-screen bg-[#0a192f] text-gray-300 pt-20">
+    <div
+      id="about"
+      className="w-screen h-screen bg-[#F2F1E3] text-grey pt-20 transition bg-opacity-0"
+      style={{ backgroundColor: "#FFFFF1" }}
+    >
       <div className="flex flex-col justify-center items-center w-full">
         <div className="max-w-[1000px] w-4/5 px-4 grid grid-cols-2 gap-8">
           <div className="sm:text-right pb-8 pl-4">
@@ -22,8 +26,8 @@ const About = () => {
               solutions that streamline workflows and provides a positive impact
               to everyone's daily lives. I am currently working at LinkedIn as a
               Lead Deal Desk Associate, while also developing software to
-              optimize our team's workflow. I am making a career pivot to Software
-              Engineering, which is where my interest lies.
+              optimize our team's workflow. I am making a career pivot to
+              Software Engineering, which is where my interest lies.
             </p>
           </div>
         </div>

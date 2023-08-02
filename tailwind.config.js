@@ -17,7 +17,7 @@ module.exports = {
         grey: "#3C403D",
         tanly: "#DADED4",
         white: "#FFFFFF",
-        "green-leaf": "#39603D"
+        greenleaf: "#39603D"
       },
     },
   },

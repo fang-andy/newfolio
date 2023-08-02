@@ -5,10 +5,10 @@ const Work = () => {
   return (
     <div
       id="work"
-      className="w-full h-screen mid:h-screen bg-[#0a192f] text-gray-300 pt-20"
+      className="w-full h-screen bg-[#0a192f] flex flex-col justify-center pt-20 text-gray-300"
     >
       {/* Container */}
-      <div className="max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-4/5 h-full">
+      <div className="max-w-[1000px] mx-auto w-4/5 h-full">
         <div className="pb-8">
           <p className="text-4xl font-bold inline border-b-4 text-gray-300 border-[#fca26e]">
             Work

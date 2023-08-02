@@ -18,5 +18,8 @@
     "react-icons": "^4.10.1",
     "react-scroll": "^1.8.9",
     "tailwindcss": "3.3.2"
+  },
+  "devDependencies": {
+    "file-loader": "^6.2.0"
   }
 }

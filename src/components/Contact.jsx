@@ -13,7 +13,7 @@ const Contact = () => {
       >
         <div className="pb-8">
           <p className="text-4xl font-bold inline border-b-4 border-[#fca26e] text-gray-300">
-            Contact
+            Get in Touch
           </p>
           <p className="text-gray-300 py-4">
             Submit the form below or contact via email afang1094@gmail.com

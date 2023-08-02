@@ -7,8 +7,8 @@
 @layer base {
   body {
     @apply font-[Raleway];
-    overflow: auto;
-    height: 100%;
+    /* overflow: scroll; */
+    /* height: 100%; */
     overscroll-behavior: none;
   }
   li {

@@ -1,19 +1,40 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useEffect } from "react";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import Image from "next/image";
 import ProfilePic from "../../public/pic1.jpeg";
 import useMediaQuery from "@/hooks/useMediaQuery";
+import videoBackground from "../../public/background.mp4";
 
 const Landing = ({ setSelectedPage }) => {
   const isAboveMediumScreens = useMediaQuery("(min-width:1060px)");
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 0.5;
+    }
+  }, []);
 
   return (
-    <div id="home" className="w-[full] h-screen bg-tanly">
+    <div
+      id="home"
+      className="h-screen bg-tanly relative"
+    >
+      {/* Video Background */}
+      <video
+        ref={videoRef}
+        className="w-full h-full absolute top-0 left-0 object-cover z-0"
+        autoPlay
+        loop
+        muted
+      >
+        <source src={videoBackground} type="video/mp4" />
+      </video>
       {/* Container */}
-      <div className="max-w-[1000px] mx-auto px-8 flex flex-col justify-center w-4/5 h-full">
+      <div className="max-w-[1000px] mx-auto px-8 flex flex-col justify-center w-4/5 h-full relative z-1">
         {/* <div className="max-w-[900px] mx-auto px-8 grid grid-cols-[3fr,2fr] gap-10 h-full"> */}
 
         {/* IMAGE SECTION */}
@@ -50,8 +71,9 @@ const Landing = ({ setSelectedPage }) => {
             I'm a Full Stack Developer.
           </h2> */}
           <p className="text-grey py-4 font-light pb-4 text-end pl-4">
-            I'm a full-stack software engineer based in San Francisco, CA
-            focused on delivering top-notch web applications.
+            I'm a full-stack software engineer <br />
+            based in San Francisco, CA focused <br />
+            on delivering top-notch web applications.
           </p>
         </div>
         <div className="flex flex-col items-end">
