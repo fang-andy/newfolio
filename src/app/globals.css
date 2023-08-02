@@ -5,14 +5,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;900&display=swap');
 
 @layer base {
+  html {
+    scroll-snap-type: y mandatory;
+  }
   body {
     @apply font-[Raleway];
-    /* overflow: scroll; */
-    /* height: 100%; */
+    overflow: scroll;
     overscroll-behavior: none;
+    scroll-snap-type: y mandatory;
   }
   li {
     @apply cursor-pointer;
+  }
+  .snap-start {
+    scroll-snap-align: start;
   }
 }
 

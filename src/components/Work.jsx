@@ -5,7 +5,7 @@ const Work = () => {
   return (
     <div
       id="work"
-      className="w-full h-screen bg-[#0a192f] flex flex-col justify-center pt-20 text-gray-300"
+      className="snap-start w-full h-screen bg-[#0a192f] flex flex-col justify-center pt-20 text-gray-300"
     >
       {/* Container */}
       <div className="max-w-[1000px] mx-auto w-4/5 h-full">

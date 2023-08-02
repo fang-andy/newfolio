@@ -21,7 +21,7 @@ const Landing = ({ setSelectedPage }) => {
   return (
     <div
       id="home"
-      className="h-screen bg-tanly relative"
+      className="snap-start h-screen bg-tanly relative"
     >
       {/* Video Background */}
       <video

@@ -4,7 +4,7 @@ const About = () => {
   return (
     <div
       id="about"
-      className="w-screen h-screen bg-[#F2F1E3] text-grey pt-20 transition bg-opacity-0"
+      className="snap-start w-screen h-screen bg-[#F2F1E3] text-grey pt-20 transition bg-opacity-0"
       style={{ backgroundColor: "#FFFFF1" }}
     >
       <div className="flex flex-col justify-center items-center w-full">

@@ -17,68 +17,91 @@ const App = () => {
   const [activeLink, setActiveLink] = useState("home");
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const homeSection = document.getElementById("home");
-      const aboutSection = document.getElementById("about");
-      const workSection = document.getElementById("work");
-      const contactSection = document.getElementById("contact");
-
-      const scrollPosition = window.scrollY;
-
-      if (
-        scrollPosition >= homeSection.offsetTop &&
-        scrollPosition < aboutSection.offsetTop
-      ) {
-        setActiveLink("home");
-      } else if (
-        scrollPosition >= aboutSection.offsetTop &&
-        scrollPosition < workSection.offsetTop
-      ) {
-        setActiveLink("about");
-      } else if (
-        scrollPosition >= workSection.offsetTop &&
-        scrollPosition < contactSection.offsetTop
-      ) {
-        setActiveLink("work");
-      } else {
-        setActiveLink("contact");
+  const handleIntersection = (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        setActiveLink(entry.target.id);
       }
+    });
+  };
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5, // Adjust this threshold as per your requirements
     };
 
-    window.addEventListener("scroll", handleScroll);
-    window.addEventListener("scroll-snap", handleScroll);
+    const homeSection = document.getElementById("home");
+    const aboutSection = document.getElementById("about");
+    const workSection = document.getElementById("work");
+    const contactSection = document.getElementById("contact");
 
+    const observer = new IntersectionObserver(
+      handleIntersection,
+      observerOptions
+    );
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("scroll-snap", handleScroll);
+    observer.observe(homeSection);
+    observer.observe(aboutSection);
+    observer.observe(workSection);
+    observer.observe(contactSection);
 
-    }
+    return () => observer.disconnect();
   }, []);
 
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const homeSection = document.getElementById("home");
+  //     const aboutSection = document.getElementById("about");
+  //     const workSection = document.getElementById("work");
+  //     const contactSection = document.getElementById("contact");
+
+  //     const scrollPosition = window.scrollY;
+
+  //     if (
+  //       scrollPosition >= homeSection.offsetTop &&
+  //       scrollPosition < aboutSection.offsetTop
+  //     ) {
+  //       setActiveLink("home");
+  //     } else if (
+  //       scrollPosition >= aboutSection.offsetTop &&
+  //       scrollPosition < workSection.offsetTop
+  //     ) {
+  //       setActiveLink("about");
+  //     } else if (
+  //       scrollPosition >= workSection.offsetTop &&
+  //       scrollPosition < contactSection.offsetTop
+  //     ) {
+  //       setActiveLink("work");
+  //     } else {
+  //       setActiveLink("contact");
+  //     }
+  //   };
+
+  //   window.addEventListener("scroll", handleScroll);
+  //   window.addEventListener("scroll-snap", handleScroll);
+
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //     window.removeEventListener("scroll-snap", handleScroll);
+
+  //   }
+  // }, []);
+
   return (
-    <div className="snap-y snap-mandatory overflow-scroll h-screen">
+    <div>
       <h1 className="text-2xl">
         <Navbar activeLink={activeLink} setActiveLink={setActiveLink} />
         {/* {isAboveMediumScreens && (
           <DotGroup setSelectedPage={setSelectedPage} activeLink={activeLink} />
         )} */}
         {isAboveMediumScreens && <Social />}
-        <div className="snap-start">
-          <Landing setSelectedPage={setSelectedPage} />
-        </div>
+        <Landing setSelectedPage={setSelectedPage} />
       </h1>
-        <div className="snap-start">
-          <About />
-        </div>
-        {/* <Skills /> */}
-        <div className="snap-start">
-          <Work />
-        </div>
-        <div className="snap-start">
-          <Contact />
-        </div>
+      <About />
+      <Work />
+      <Contact />
     </div>
   );
 };
