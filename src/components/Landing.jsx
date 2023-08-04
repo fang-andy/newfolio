@@ -19,20 +19,23 @@ const Landing = ({ setSelectedPage }) => {
   }, []);
 
   return (
-    <div
-      id="home"
-      className="snap-start h-screen bg-tanly relative"
-    >
+    <div id="home" className="snap-start h-screen bg-[#F2F1E3] relative">
       {/* Video Background */}
       <video
         ref={videoRef}
         className="w-full h-full absolute top-0 left-0 object-cover z-0"
         autoPlay
-        loop
+        loop={true}
         muted
       >
         <source src={videoBackground} type="video/mp4" />
       </video>
+
+      {/* Video Fade Overlay */}
+      <div className="absolute bottom-0 left-0 w-full h-full z-0">
+        <div className="absolute bottom-0 left-0 w-full h-[50%] bg-gradient-to-t from-[#F2F1E3] to-transparent"></div>
+      </div>
+
       {/* Container */}
       <div className="max-w-[1000px] mx-auto px-8 flex flex-col justify-center w-4/5 h-full relative z-1">
         {/* <div className="max-w-[900px] mx-auto px-8 grid grid-cols-[3fr,2fr] gap-10 h-full"> */}
@@ -64,7 +67,7 @@ const Landing = ({ setSelectedPage }) => {
 
         <div className="text-right">
           <p className="text-grey font-light">Hi, my name is</p>
-          <h1 className="text-4xl text-shadow sm:text-7xl font-bold text-[#013220] pb-4">
+          <h1 className="text-4xl text-shadow sm:text-7xl font-bold text-darkgreen pb-4">
             Andy Fang
           </h1>
           {/* <h2 className="text-4xl sm:text-7xl font-bold text-[#8892b0] pb-4">
@@ -72,8 +75,8 @@ const Landing = ({ setSelectedPage }) => {
           </h2> */}
           <p className="text-grey py-4 font-light pb-4 text-end pl-4">
             I'm a full-stack software engineer <br />
-            based in San Francisco, CA focused <br />
-            on delivering top-notch web applications.
+            based in San Francisco, CA
+            {/* focused <br /> on delivering top-notch web applications. */}
           </p>
         </div>
         <div className="flex flex-col items-end">

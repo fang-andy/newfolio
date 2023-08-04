@@ -5,7 +5,7 @@ import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
-const Navbar = ({ activeLink, setActiveLink }) => {
+const Navbar = ({ setSelectedPage, activeLink, setActiveLink }) => {
   const [nav, setNav] = useState(false);
 
   const handleClick = () => setNav(!nav);
@@ -15,12 +15,13 @@ const Navbar = ({ activeLink, setActiveLink }) => {
 
     return (
       <AnchorLink
-        className={`${activeLink === lowerCasePage ? "text-[#013220]" : ""}
+        className={`${activeLink === lowerCasePage ? "text-darkgreen border-b-2 border-olive" : ""}
         ${nav ? "py-6 text-4xl" : ""}
-         hover:text-greenleaf transition duration-500 nav-link`}
+         hover:text-greenleaf transition duration-500`}
         href={`#${lowerCasePage}`}
         onClick={() => {
-          setActiveLink(lowerCasePage);
+          // setActiveLink(lowerCasePage);
+          setSelectedPage(lowerCasePage);
           !nav ? null : handleClick();
         }}
       >
@@ -59,7 +60,7 @@ const Navbar = ({ activeLink, setActiveLink }) => {
         className={
           !nav
             ? "hidden"
-            : "absolute top-0 left-0 w-screen h-screen bg-[#0a192f] flex flex-col justify-center items-center font-light"
+            : "absolute top-0 left-0 w-screen h-screen bg-beige flex flex-col justify-center items-center font-light"
         }
       >
         <Link page="Home" />

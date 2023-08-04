@@ -15,21 +15,6 @@ import { Github, Instagram, LinkedIn, Mail } from "@/assets";
 
 // };
 
-// const List = () => {
-//   return (
-//     <li>
-//       <a
-//         className="p-[40px] hover:opacity-50 transition duration-500"
-//         href="https://github.com/fang-andy"
-//         target="_blank"
-//         rel="noreferrer"
-//       >
-//         <Image alt="github-link" src={Github} width={40} height={40} />
-//       </a>
-//     </li>
-//   );
-// };
-
 const Social = () => {
   return (
     <div className="w-[40px] fixed bottom-0 right-[40px] z-10">
@@ -85,22 +70,3 @@ const Social = () => {
 };
 
 export default Social;
-
-// const StyledSideElement = styled.div`
-//   width: 40px;
-//   position: fixed;
-//   bottom: 0;
-//   left: ${(props) => (props.orientation === "left" ? "40px" : "auto")};
-//   right: ${(props) => (props.orientation === "left" ? "auto" : "40px")};
-//   z-index: 10;
-//   color: var(--light-slate);
-
-//   @media (max-width: 1080px) {
-//     left: ${(props) => (props.orientation === "left" ? "20px" : "auto")};
-//     right: ${(props) => (props.orientation === "left" ? "auto" : "20px")};
-//   }
-
-//   @media (max-width: 768px) {
-//     display: none;
-//   }
-// `;

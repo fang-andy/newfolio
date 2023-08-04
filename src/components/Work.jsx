@@ -5,12 +5,12 @@ const Work = () => {
   return (
     <div
       id="work"
-      className="snap-start w-full h-screen bg-[#0a192f] flex flex-col justify-center pt-20 text-gray-300"
+      className="snap-start w-full h-screen bg-beige flex flex-col justify-center pt-20 text-grey"
     >
       {/* Container */}
       <div className="max-w-[1000px] mx-auto w-4/5 h-full">
         <div className="pb-8">
-          <p className="text-4xl font-bold inline border-b-4 text-gray-300 border-[#fca26e]">
+          <p className="text-4xl font-bold inline border-b-4 border-olive">
             Work
           </p>
           <p className="py-6">
@@ -34,7 +34,7 @@ const Work = () => {
               <div className="pt-8 text-center">
                 <a href="/">
                   <button
-                    className="text0center rounded-lg px-4 py-3 m-3 bg-white
+                    className="text-center rounded-lg px-4 py-3 m-3 bg-white
                     text-gray-700 font-bold text-lg"
                   >
                     Demo

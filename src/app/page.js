@@ -29,7 +29,7 @@ const App = () => {
     const observerOptions = {
       root: null,
       rootMargin: "0px",
-      threshold: 0.5, // Adjust this threshold as per your requirements
+      threshold: 0.5,
     };
 
     const homeSection = document.getElementById("home");
@@ -50,49 +50,14 @@ const App = () => {
     return () => observer.disconnect();
   }, []);
 
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const homeSection = document.getElementById("home");
-  //     const aboutSection = document.getElementById("about");
-  //     const workSection = document.getElementById("work");
-  //     const contactSection = document.getElementById("contact");
-
-  //     const scrollPosition = window.scrollY;
-
-  //     if (
-  //       scrollPosition >= homeSection.offsetTop &&
-  //       scrollPosition < aboutSection.offsetTop
-  //     ) {
-  //       setActiveLink("home");
-  //     } else if (
-  //       scrollPosition >= aboutSection.offsetTop &&
-  //       scrollPosition < workSection.offsetTop
-  //     ) {
-  //       setActiveLink("about");
-  //     } else if (
-  //       scrollPosition >= workSection.offsetTop &&
-  //       scrollPosition < contactSection.offsetTop
-  //     ) {
-  //       setActiveLink("work");
-  //     } else {
-  //       setActiveLink("contact");
-  //     }
-  //   };
-
-  //   window.addEventListener("scroll", handleScroll);
-  //   window.addEventListener("scroll-snap", handleScroll);
-
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //     window.removeEventListener("scroll-snap", handleScroll);
-
-  //   }
-  // }, []);
-
   return (
     <div>
       <h1 className="text-2xl">
-        <Navbar activeLink={activeLink} setActiveLink={setActiveLink} />
+        <Navbar
+          setSelectedPage={setSelectedPage}
+          activeLink={activeLink}
+          setActiveLink={setActiveLink}
+        />
         {/* {isAboveMediumScreens && (
           <DotGroup setSelectedPage={setSelectedPage} activeLink={activeLink} />
         )} */}

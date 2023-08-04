@@ -4,7 +4,7 @@ const Contact = () => {
   return (
     <div
       id="contact"
-      className="snap-start w-full h-screen bg-[#0a192f] flex justify-center items-center p-4 font-light"
+      className="snap-start w-full h-screen bg-beige flex justify-center items-center p-4 font-light"
     >
       <form
         method="POST"
@@ -12,10 +12,10 @@ const Contact = () => {
         className="flex flex-col max-w-[600px] w-full"
       >
         <div className="pb-8">
-          <p className="text-4xl font-bold inline border-b-4 border-[#fca26e] text-gray-300">
+          <p className="text-4xl font-bold inline border-b-4 border-olive text-grey">
             Get in Touch
           </p>
-          <p className="text-gray-300 py-4">
+          <p className="text-grey py-4">
             Submit the form below or contact via email afang1094@gmail.com
           </p>
         </div>
